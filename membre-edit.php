@@ -17,6 +17,7 @@ if(isset($_GET['id'])){
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
     <style>
         input{
@@ -58,7 +59,7 @@ if(isset($_GET['id'])){
         </form>
         <form action="membre-delete.php" method="post">
             <input type="hidden" name="id" value="<?php echo $id;?>">
-            <input type="submit" value="Effacer">
+            <input type="submit" value="Supprimer">
         </form>
         <p><a href="membre-index.php?id=<?php echo $id; ?>">Retour</a></p>
     </main>

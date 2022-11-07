@@ -1,41 +1,24 @@
 <?php
 require_once "Crud.php";
 
-class Libraire
+class Libraire extends Crud
 {
-    public $nom;
-    public $prenom;
-    public $adresse;
-    public $code_postal;
-    public $courriel;
-    public $telephone;
+    public $id;
 
-    // public function __construct($nom, $prenom, $adresse = null, $code_postal = null, $courriel, $telephone = null)
-    // {
-    //     $this->nom = $nom;
-    //     $this->prenom = $prenom;
-    //     $this->adresse = $adresse;
-    //     $this->code_postal = $code_postal;
-    //     $this->courriel = $courriel;
-    //     $this->telephone = $telephone;
-    // }
-
-    public function ajouterLibraire($nom, $prenom, $adresse, $code_postal, $courriel, $telephone)
-    {
-        $this->nom = $nom;
-        $this->prenom = $prenom;
-        $this->adresse = $adresse;
-        $this->code_postal = $code_postal;
-        $this->courriel = $courriel;
-        $this->telephone = $telephone;
+    public function sauvegarderLibraire(){
+        if (isset($this->id)) {
+            $this->update('libraire', $this->post);
+        }else{
+            $insert = $this->insert('libraire',$this->post);
+            $this->id = $insert;
+        }    
+        return $this->id;
     }
-
-    public function mettreAJourLibraire(){
-
-    }
-
+    
     public function effacerLibraire(){
-        
+        $delete = $this->delete('libraire', $this->id);
+        $delete;
     }
 
 }
+

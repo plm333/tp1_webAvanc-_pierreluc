@@ -1,7 +1,7 @@
 <?php
 require_once "Crud.php";
 
-class Membre
+class Membre extends Crud
 {
     public $nom;
     public $prenom;
@@ -12,11 +12,11 @@ class Membre
     public $num_livre_loue;
     public $type_membre;
     public $id;
-    private $crud;
     private $post;
-    
+
     public function __construct($dictionnairePost)
     {
+        parent::__construct();
         $this->nom = $dictionnairePost["nom"];
         $this->prenom = $dictionnairePost["prenom"];
         $this->adresse = $dictionnairePost["adresse"];
@@ -26,22 +26,21 @@ class Membre
         $this->num_livre_loue = $dictionnairePost["num_livre_loue"];
         $this->type_membre = $dictionnairePost["type_membre"];
         $this->id = $dictionnairePost["id"];
-        $this->crud = new Crud;
         $this->post = $dictionnairePost;
     }
 
     public function sauvegarder(){
         if (isset($this->id)) {
-            $this->crud->update('membre', $this->post);
+            $this->update('membre', $this->post);
         }else{
-            $insert = $this->crud->insert('membre', (array) $this);
+            $insert = $this->insert('membre',$this->post);
             $this->id = $insert;
         }    
         return $this->id;
     }
     
     public function effacer(){
-        $delete = $this->crud->delete('membre', $this->id);
+        $delete = $this->delete('membre', $this->id);
         $delete;
     }
 

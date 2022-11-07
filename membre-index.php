@@ -14,11 +14,14 @@ $membre = $Crud->select("membre", "nom", "DESC");
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
     <title>Liste des membres</title>
 </head>
 <body>
+    <h5 class="titre1">La Bibliothèque</h5>
+    <h1 class="titre2">Canva</h1>
     <main>
-        <h1>Liste des membres</h1>
+        <h1 class="liste">Liste des membres</h1>
         <table border="1">
             <thead>
                 <tr>
