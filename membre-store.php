@@ -7,6 +7,6 @@ $insert = $Crud->sauvegarder();
 
 $insert;
 
-header('Location: membre-index.php');
+header('Location: index.php');
 
 

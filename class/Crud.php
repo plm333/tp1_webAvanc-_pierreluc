@@ -3,7 +3,7 @@
 class Crud extends PDO {
 
     public function __construct(){
-        parent::__construct('mysql:host=localhost; dbname=eLibrary; port=8889; charset=utf8', 'root', 'root');
+        parent::__construct('mysql:host=localhost; dbname=e2194803; port=3306; charset=utf8', 'e2194803', 'FqJEn4S0kqPERMpsT8TA');
     }
 
     public function select($table, $field='id', $order='ASC' ){
@@ -12,7 +12,7 @@ class Crud extends PDO {
         return  $stmt->fetchAll();
     }
 
-    public function selectId($table, $value, $field = 'id', $url = 'membre-index.php'){
+    public function selectId($table, $value, $field = 'id', $url = 'index.php'){
         $sql ="SELECT * FROM $table WHERE $field = :$field";
         $stmt = $this->prepare($sql);
         $stmt->bindValue(":$field", $value);
@@ -62,7 +62,7 @@ class Crud extends PDO {
         }
     }
 
-    public function delete($table, $id, $champId = 'id', $url='membre-index.php'){
+    public function delete($table, $id, $champId = 'id', $url='index.php'){
 
         $sql = "DELETE FROM $table WHERE $champId = :$champId";
 

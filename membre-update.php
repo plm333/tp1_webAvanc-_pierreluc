@@ -10,4 +10,4 @@ $update = $Crud->sauvegarder();
 
 echo $update;
 
-header('Location: membre-index.php');
+header('Location: index.php');

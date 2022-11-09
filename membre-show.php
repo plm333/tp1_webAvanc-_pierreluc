@@ -6,7 +6,7 @@ if(isset($_GET['id'])){
     $membre = $Crud->selectId('membre', $id);
     extract($membre);
 }else{
-    header('Location: membre-index.php');
+    header('Location: index.php');
 }
 
 ?>
@@ -28,10 +28,10 @@ if(isset($_GET['id'])){
         <p><strong>Code Postal :</strong><?php echo $code_postal; ?></p>
         <p><strong>Téléphone :</strong><?php echo $telephone; ?></p>
         <p><strong>Courriel : </strong><?php echo $courriel; ?></p>
-        <p><strong>Livres Empreutés : </strong><?php echo $num_livre_loue; ?></p>
+        <p><strong>Livres Empruntés : </strong><?php echo $num_livre_loue; ?></p>
         <p><strong>Type de membre : </strong><?php echo $type_membre; ?></p>
         <p><a href="membre-edit.php?id=<?php echo $id; ?>">Modifier</a></p>
-        <p><a href="membre-index.php?id=<?php echo $id; ?>">Retour</a></p>
+        <p><a href="index.php">Retour</a></p>
     </main>
 </body>
 </html>

@@ -32,7 +32,7 @@
             <label>Courriel
                 <input type="email" name="courriel">
             </label>
-            <label>Livres Empreutés
+            <label>Livres Empruntés
                 <input type="text" name="num_livre_loue">
             </label>
             <label>Type de membre
@@ -40,7 +40,7 @@
             </label>
             <input type="submit" value="Ajouter">
         </form>
-        <p><a href="membre-index.php?id=<?php echo $id; ?>">Retour</a></p>
+        <p><a href="index.php">Retour</a></p>
     </main>
 </body>
 
